@@ -27,7 +27,7 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="nav-container">
-        <a href="/" className="nav-logo" onClick={closeMenu}>
+        <a href={import.meta.env.BASE_URL} className="nav-logo" onClick={closeMenu}>
           <span className="logo-icon">✨</span> BigManDemo
         </a>
 

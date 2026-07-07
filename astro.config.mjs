@@ -10,6 +10,9 @@ const basePath = process.env.BASE_PATH || '/BigManDemo/';
 export default defineConfig({
   // Configure as static site generator
   output: 'static',
+
+  // GitHub Pages site URL
+  site: 'https://bigman1392.github.io',
   
   // GitHub Pages base path - can be overridden via BASE_PATH environment variable
   base: basePath,
