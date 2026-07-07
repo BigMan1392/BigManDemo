@@ -40,7 +40,7 @@ jobs:
         id: base-path
         run: |
           if [ -z "${{ github.event.inputs.base_path }}" ]; then
-            echo "path=/" >> $GITHUB_OUTPUT
+            echo "path=/BigManDemo/" >> $GITHUB_OUTPUT
           else
             echo "path=${{ github.event.inputs.base_path }}" >> $GITHUB_OUTPUT
           fi
