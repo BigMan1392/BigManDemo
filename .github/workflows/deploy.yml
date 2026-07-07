@@ -44,12 +44,23 @@ jobs:
             echo "path=${{ github.event.inputs.base_path }}" >> $GITHUB_OUTPUT
           fi
 
-      - name: Install, build, and upload your site
-        uses: withastro/action@v2
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build with Astro
         env:
           BASE_PATH: ${{ steps.base-path.outputs.path }}
+        run: npm run build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
         with:
-          path: ${{ env.BUILD_PATH }}
+          path: ./dist
 
   deploy:
     name: Deploy
