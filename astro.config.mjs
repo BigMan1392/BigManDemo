@@ -2,7 +2,9 @@ import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 
 // Get base path from environment variable or use default
-const basePath = process.env.BASE_PATH || '/';
+// For project repositories, use '/repository-name/'
+// For user/org pages, use '/'
+const basePath = process.env.BASE_PATH || '/BigManDemo/';
 
 // https://astro.build/config
 export default defineConfig({
@@ -10,8 +12,6 @@ export default defineConfig({
   output: 'static',
   
   // GitHub Pages base path - can be overridden via BASE_PATH environment variable
-  // For user/org pages, use '/'
-  // For project pages, use '/repository-name/'
   base: basePath,
 
   // Enable React integration
