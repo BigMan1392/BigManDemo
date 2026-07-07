@@ -2,44 +2,122 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Welcome to Astro">
-	<h1>Welcome to Astro v7</h1>
-	<p>
-		Ready to build something amazing? Start editing and see the magic happen!
-	</p>
-	<ul>
-		<li>Edit <code>src/pages/index.astro</code> to see changes on the page</li>
-		<li>Check out the Astro docs at <a href="https://docs.astro.build">docs.astro.build</a></li>
-	</ul>
+<Layout title="Home">
+	<section class="hero">
+		<h1>Welcome to BigManDemo</h1>
+		<p class="lead">A modern, professional website built with Astro v7 and deployed on GitHub Pages.</p>
+		<div class="hero-buttons">
+			<a href="https://astro.build" target="_blank" rel="noopener" class="btn">Learn Astro</a>
+			<a href="https://github.com/BigMan1392/BigManDemo" target="_blank" rel="noopener" class="btn btn-secondary">View Source</a>
+		</div>
+	</section>
+
+	<section class="features">
+		<h2>Features</h2>
+		<div class="feature-grid">
+			<div class="feature-card">
+				<h3>⚡ Lightning Fast</h3>
+				<p>Built with Astro for optimal performance. Static site generation means blazing-fast load times.</p>
+			</div>
+			<div class="feature-card">
+				<h3>🚀 Deployed on GitHub Pages</h3>
+				<p>Automated CI/CD pipeline ensures your site stays up-to-date with every push to main.</p>
+			</div>
+			<div class="feature-card">
+				<h3>🎨 Modern Design</h3>
+				<p>Professional, responsive design that looks great on all devices.</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="cta">
+		<h2>Ready to Get Started?</h2>
+		<p>Clone the repository and start building your own professional website.</p>
+		<a href="https://github.com/BigMan1392/BigManDemo" target="_blank" rel="noopener" class="btn">View on GitHub</a>
+	</section>
 </Layout>
 
 <style>
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
+	.hero {
+		text-align: center;
+		padding: 3rem 0;
+		margin-bottom: 4rem;
 	}
-	h1 {
-		color: #ff6b35;
-		font-size: 2.5rem;
+
+	.hero h1 {
+		margin-bottom: 1rem;
 	}
-	code {
-		background-color: #f4f4f4;
-		padding: 0.25rem 0.5rem;
-		border-radius: 0.25rem;
+
+	.lead {
+		font-size: 1.25rem;
+		color: var(--text-light);
+		max-width: 600px;
+		margin: 0 auto 2rem;
 	}
-	ul {
-		list-style: none;
-		padding: 0;
+
+	.hero-buttons {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+		flex-wrap: wrap;
 	}
-	li {
-		margin: 1rem 0;
+
+	.features {
+		margin-bottom: 4rem;
 	}
-	a {
-		color: #0ea5e9;
-		text-decoration: none;
+
+	.features h2 {
+		text-align: center;
+		margin-bottom: 3rem;
 	}
-	a:hover {
-		text-decoration: underline;
+
+	.feature-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+	}
+
+	.feature-card {
+		background: var(--bg-alt);
+		padding: 2rem;
+		border-radius: 0.75rem;
+		border: 1px solid var(--border);
+		transition: all 0.3s ease;
+	}
+
+	.feature-card:hover {
+		border-color: var(--primary);
+		box-shadow: 0 4px 12px rgba(14, 165, 233, 0.15);
+	}
+
+	.feature-card h3 {
+		margin-top: 0;
+		color: var(--primary);
+	}
+
+	.cta {
+		text-align: center;
+		background: var(--bg-alt);
+		padding: 3rem 2rem;
+		border-radius: 0.75rem;
+		border: 2px solid var(--border);
+	}
+
+	.cta h2 {
+		margin-top: 0;
+	}
+
+	@media (max-width: 768px) {
+		.hero-buttons {
+			flex-direction: column;
+		}
+
+		.hero-buttons .btn {
+			width: 100%;
+		}
+
+		.feature-grid {
+			grid-template-columns: 1fr;
+		}
 	}
 </style>

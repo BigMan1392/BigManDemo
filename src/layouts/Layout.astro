@@ -12,15 +12,29 @@ const { title } = Astro.props;
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro v7 site" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="description" content="Professional Astro v7 website" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<title>{title} | BigManDemo</title>
 	</head>
 	<body>
-		<main>
+		<nav class="navbar">
+			<div class="nav-container">
+				<a href="/" class="nav-logo">BigManDemo</a>
+				<ul class="nav-menu">
+					<li><a href="/">Home</a></li>
+				</ul>
+			</div>
+		</nav>
+		<main class="main-content">
 			<slot />
 		</main>
+		<footer class="footer">
+			<div class="footer-content">
+				<p>&copy; 2025 BigManDemo. All rights reserved.</p>
+				<p>Built with <a href="https://astro.build" target="_blank">Astro v7</a> and deployed on GitHub Pages.</p>
+			</div>
+		</footer>
 	</body>
 </html>
