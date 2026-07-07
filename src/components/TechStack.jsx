@@ -13,7 +13,7 @@ export default function TechStack() {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   return (
-    <div className="tech-stack-section">
+    <div className="tech-stack-section" id="tech">
       <h2>Tech Stack</h2>
       <div className="tech-grid">
         {techStack.map((tech, index) => (

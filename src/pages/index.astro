@@ -9,16 +9,65 @@ import TechStack from '../components/TechStack.jsx';
 
 <Layout title="Home">
 	<section class="hero">
-		<h1>Welcome to BigManDemo</h1>
-		<p class="lead">A stunning, modern website built with Astro v7, React, and cutting-edge web technologies. Deployed instantly on GitHub Pages with automated CI/CD.</p>
-		<div class="hero-buttons">
-			<a href="https://astro.build" target="_blank" rel="noopener" class="btn">Learn Astro</a>
-			<a href="https://github.com/BigMan1392/BigManDemo" target="_blank" rel="noopener" class="btn btn-secondary">View Source Code</a>
+		<div class="hero-copy">
+			<span class="eyebrow">Astro + React starter</span>
+			<h1>Build a polished website foundation for your next digital product.</h1>
+			<p class="lead">BigManDemo gives you a professional landing page experience with refined visuals, thoughtful structure, and a responsive layout that feels ready for real users.</p>
+			<div class="hero-buttons">
+				<a href="https://astro.build" target="_blank" rel="noopener" class="btn">Learn Astro</a>
+				<a href="https://github.com/BigMan1392/BigManDemo" target="_blank" rel="noopener" class="btn btn-secondary">View Source Code</a>
+			</div>
+			<ul class="hero-points">
+				<li>Fast static performance</li>
+				<li>Ready for GitHub Pages</li>
+				<li>Easy to customize for your product</li>
+			</ul>
+		</div>
+		<div class="hero-preview" aria-hidden="true">
+			<div class="preview-window">
+				<div class="preview-bar">
+					<span></span><span></span><span></span>
+				</div>
+				<div class="preview-content">
+					<div class="preview-panel preview-main">
+						<p>Launch faster</p>
+						<h3>Build once. Ship everywhere.</h3>
+						<div class="preview-pill-row">
+							<span>SEO</span>
+							<span>Fast</span>
+							<span>Modern</span>
+						</div>
+					</div>
+					<div class="preview-panel preview-side">
+						<div class="preview-metric">97%</div>
+						<p>performance-ready layout</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="stats-strip">
+		<div class="stat-card">
+			<strong>3x</strong>
+			<span>faster than a traditional setup</span>
+		</div>
+		<div class="stat-card">
+			<strong>100%</strong>
+			<span>responsive by default</span>
+		</div>
+		<div class="stat-card">
+			<strong>1 click</strong>
+			<span>deploy-ready for GitHub Pages</span>
 		</div>
 	</section>
 
 	<section id="features">
-		<h2>Why This Stack?</h2>
+		<div class="section-heading">
+			<span class="eyebrow">Why it works</span>
+			<h2>Everything you need for a polished first impression.</h2>
+			<p>From lightning-fast performance to animated interactions, the starter is built to make your launch feel purposeful and premium.</p>
+		</div>
 		<div class="feature-grid">
 			<FeatureCard 
 				client:visible
@@ -65,6 +114,30 @@ import TechStack from '../components/TechStack.jsx';
 		</div>
 	</section>
 
+	<section class="process-section">
+		<div class="section-heading">
+			<span class="eyebrow">How it comes together</span>
+			<h2>Build a stronger homepage in a few clear steps.</h2>
+		</div>
+		<div class="process-grid">
+			<article class="process-card">
+				<span>01</span>
+				<h3>Shape your story</h3>
+				<p>Define the product message, main promise, and the one action you want visitors to take.</p>
+			</article>
+			<article class="process-card">
+				<span>02</span>
+				<h3>Layer the sections</h3>
+				<p>Add value, proof, and context with feature cards, a clear call to action, and practical details.</p>
+			</article>
+			<article class="process-card">
+				<span>03</span>
+				<h3>Ship with confidence</h3>
+				<p>Publish quickly to GitHub Pages and keep iterating as your product evolves.</p>
+			</article>
+		</div>
+	</section>
+
 	<TechStack client:visible />
 
 	<section class="cta">
@@ -77,13 +150,253 @@ import TechStack from '../components/TechStack.jsx';
 <style>
 	.feature-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 2rem;
+		margin-top: 2.5rem;
+	}
+
+	.hero {
+		display: grid;
+		grid-template-columns: 1.1fr 0.9fr;
 		gap: 2.5rem;
-		margin-top: 3rem;
+		align-items: center;
+		padding: 3rem 0 2.5rem;
+	}
+
+	.hero-copy {
+		text-align: left;
+	}
+
+	.eyebrow {
+		display: inline-flex;
+		align-items: center;
+		padding: 0.35rem 0.8rem;
+		border-radius: 999px;
+		background: rgba(14, 165, 233, 0.12);
+		color: var(--primary);
+		font-size: 0.85rem;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+
+	.hero h1 {
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+		font-size: clamp(2.2rem, 3.8vw, 3.6rem);
+		text-align: left;
+	}
+
+	.hero .lead {
+		margin: 0 0 1.5rem;
+		max-width: 660px;
+		text-align: left;
+	}
+
+	.hero-points {
+		list-style: none;
+		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+		margin-top: 1.25rem;
+	}
+
+	.hero-points li {
+		margin: 0;
+		padding: 0.65rem 0.95rem;
+		border-radius: 999px;
+		background: var(--bg-alt);
+		border: 1px solid var(--border);
+		box-shadow: var(--shadow-sm);
+		font-size: 0.95rem;
+	}
+
+	.hero-preview {
+		display: flex;
+		justify-content: center;
+	}
+
+	.preview-window {
+		width: 100%;
+		max-width: 480px;
+		background: rgba(255, 255, 255, 0.9);
+		backdrop-filter: blur(12px);
+		border: 1px solid rgba(226, 232, 240, 0.8);
+		border-radius: 1.25rem;
+		box-shadow: var(--shadow-xl);
+		overflow: hidden;
+	}
+
+	.preview-bar {
+		display: flex;
+		gap: 0.45rem;
+		padding: 0.95rem 1rem;
+		background: rgba(248, 250, 252, 0.95);
+		border-bottom: 1px solid var(--border);
+	}
+
+	.preview-bar span {
+		width: 0.7rem;
+		height: 0.7rem;
+		border-radius: 50%;
+		display: inline-block;
+	}
+
+	.preview-bar span:nth-child(1) { background: #fb7185; }
+	.preview-bar span:nth-child(2) { background: #fbbf24; }
+	.preview-bar span:nth-child(3) { background: #34d399; }
+
+	.preview-content {
+		display: grid;
+		gap: 1rem;
+		padding: 1rem;
+	}
+
+	.preview-panel {
+		border-radius: 1rem;
+		padding: 1.25rem;
+	}
+
+	.preview-main {
+		background: linear-gradient(135deg, rgba(14, 165, 233, 0.2), rgba(139, 92, 246, 0.2));
+	}
+
+	.preview-main p {
+		margin: 0 0 0.3rem;
+		font-size: 0.9rem;
+		font-weight: 700;
+		color: var(--primary);
+	}
+
+	.preview-main h3 {
+		margin: 0 0 1rem;
+		font-size: 1.3rem;
+	}
+
+	.preview-pill-row {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.6rem;
+	}
+
+	.preview-pill-row span {
+		padding: 0.35rem 0.75rem;
+		border-radius: 999px;
+		background: rgba(255, 255, 255, 0.7);
+		font-size: 0.8rem;
+		font-weight: 600;
+	}
+
+	.preview-side {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 0.4rem;
+		background: var(--bg-alt);
+		border: 1px solid var(--border);
+	}
+
+	.preview-metric {
+		font-size: 2rem;
+		font-weight: 800;
+		color: var(--primary);
+	}
+
+	.stats-strip {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 1rem;
+		margin: 1rem 0 3rem;
+	}
+
+	.stat-card {
+		padding: 1.1rem 1.2rem;
+		border-radius: 1rem;
+		background: var(--bg-alt);
+		border: 1px solid var(--border);
+		box-shadow: var(--shadow-sm);
+		display: flex;
+		flex-direction: column;
+		gap: 0.35rem;
+	}
+
+	.stat-card strong {
+		font-size: 1.2rem;
+		color: var(--primary);
+	}
+
+	.section-heading {
+		max-width: 700px;
+		margin-bottom: 1.5rem;
+	}
+
+	.section-heading h2 {
+		margin-top: 0.8rem;
+		margin-bottom: 0.75rem;
+	}
+
+	.process-section {
+		padding: 2rem 0 1rem;
+	}
+
+	.process-grid {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 1.25rem;
+		margin-top: 1.5rem;
+	}
+
+	.process-card {
+		padding: 1.5rem;
+		border-radius: 1rem;
+		background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(248,250,252,0.95));
+		border: 1px solid var(--border);
+		box-shadow: var(--shadow-sm);
+	}
+
+	.process-card span {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 2.2rem;
+		height: 2.2rem;
+		border-radius: 999px;
+		background: rgba(14, 165, 233, 0.12);
+		color: var(--primary);
+		font-weight: 800;
+		margin-bottom: 0.8rem;
+	}
+
+	.process-card h3 {
+		margin: 0 0 0.45rem;
+	}
+
+	.process-card p {
+		margin: 0;
+		color: var(--text-light);
+	}
+
+	@media (max-width: 900px) {
+		.hero {
+			grid-template-columns: 1fr;
+		}
+
+		.hero-copy {
+			text-align: left;
+		}
+
+		.process-grid {
+			grid-template-columns: 1fr;
+		}
 	}
 
 	@media (max-width: 768px) {
 		.feature-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.stats-strip {
 			grid-template-columns: 1fr;
 		}
 	}
