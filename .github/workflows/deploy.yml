@@ -41,7 +41,6 @@ jobs:
         uses: withastro/action@v2
         with:
           path: ${{ env.BUILD_PATH }}
-          env: "BASE_PATH=${{ env.BASE_PATH }}"
 
   deploy:
     name: Deploy
