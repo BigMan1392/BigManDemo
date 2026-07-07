@@ -1,0 +1,44 @@
+/* Global CSS */
+:root {
+	--color-text: #333;
+	--color-bg: #fff;
+	--color-border: #ddd;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-text: #eee;
+		--color-bg: #222;
+		--color-border: #555;
+	}
+}
+
+* {
+	color: var(--color-text);
+	background-color: var(--color-bg);
+}
+
+body {
+	font-family: system-ui, -apple-system, sans-serif;
+	line-height: 1.5;
+	margin: 0;
+	padding: 0;
+}
+
+main {
+	margin: auto;
+	padding: 2rem;
+	max-width: 900px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	line-height: 1.2;
+}
+
+code {
+	background: var(--color-border);
+	padding: 0.125rem 0.25rem;
+	border-radius: 0.25rem;
+	font-family: 'Courier New', Courier, monospace;
+}
