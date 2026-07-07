@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config';
+import react from '@astrojs/react';
 
 // Get base path from environment variable or use default
 const basePath = process.env.BASE_PATH || '/';
@@ -12,6 +13,9 @@ export default defineConfig({
   // For user/org pages, use '/'
   // For project pages, use '/repository-name/'
   base: basePath,
+
+  // Enable React integration
+  integrations: [react()],
 
   // Enable strict mode for better error checking
   vite: {
